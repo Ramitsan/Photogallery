@@ -100,7 +100,7 @@ a {
   align-items: center;
 }
 
-.detail-image-frame {
+.detail-image-wrapper {
   position: relative;
   text-align: center;
 }
@@ -129,7 +129,7 @@ a {
   .thumbnail-list {
   	flex-direction: column;
   	order: 0;
-  	margin-left: 20px;
+  	margin-left: 20px;  	
   }
 
   .thumbnail-item {
@@ -138,5 +138,6 @@ a {
 
   .thumbnail-item + .thumbnail-item {
   	margin-top: 20px;
+  	margin-right: 20px;
   }
 }
