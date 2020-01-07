@@ -2,8 +2,10 @@
 
 var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
+var DETAIL_FRAME_SELECTOR = '[data-image-role="frame"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
 var HIDDEN_DETAIL_CLASS = 'hidden-detail';
+var TINY_EFFECT_CLASS = 'is-tiny';
 var ESC_KEY = 27;
 
 //изменение увеличенного изображения и его названия
@@ -48,20 +50,24 @@ function getThumbnailsArray() {
 
 //добавление body класса для просмотра увеличенных миниатюр
 //и скрытия полноэкранного изображения
-function hideDetails() {
+function hideDetails() {	
   document.body.classList.add(HIDDEN_DETAIL_CLASS);
 }
 
 //обработчик клика на миниатюры, показ полноэкранного изображения
 function showDetails() {
+  var frame = document.querySelector(DETAIL_FRAME_SELECTOR);
   document.body.classList.remove(HIDDEN_DETAIL_CLASS);
+  frame.classList.add(TINY_EFFECT_CLASS);
+  setTimeout(function() {
+  	 frame.classList.remove(TINY_EFFECT_CLASS);
+  }, 50); 
 }
 
 //обработчик нажатия (отпускания) клавиши
 function addKeyPressHandler() {
   document.body.addEventListener('keyup', function(event) {
-    event.preventDefault();
-    console.log(event.keyCode);
+    event.preventDefault();    
     if (event.keyCode === ESC_KEY) {
       hideDetails();
     }
