@@ -62,6 +62,8 @@ a {
   display: inline-block;
   min-width: 120px;
   max-width: 120px;
+  margin-bottom: 20px;
+
   border: 1px solid rgb(100%, 100%, 100%);
   border: 1px solid rgba(100%, 100%, 100%, 0.8);
 
@@ -69,7 +71,7 @@ a {
 }
 
 .thumbnail-item:hover {
-  transform: scale(1.2);
+  transform: scale(1.2);   
 }
 
 .thumbnail-list {
@@ -79,6 +81,7 @@ a {
   justify-content: space-between;
   list-style: none;
   padding: 20px 0;
+  margin: 0 auto;
 
   white-space: nowrap;
   overflow-x: auto;
@@ -110,7 +113,7 @@ a {
   position: relative;
   text-align: center;
 
-  transition: transform 1800ms linear;
+  transition: transform 1300ms linear;
 }
 
 .is-tiny {
@@ -139,14 +142,22 @@ a {
 
 .hidden-detail .thumbnail-list {
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow-y: auto;
 }
 
 .hidden-detail .thumbnail-item {
-  max-width: 80%;
+	max-width: none;
 }
 
-@media all and (min-width: 768px) {
+.hidden-detail .thumbnail-item:hover {
+  transform: scale(1.1);
+}
+
+@media all and (min-width: 895px) {
   .main-content {
     flex-direction: row;
     overflow: hidden;
@@ -159,12 +170,26 @@ a {
     padding: 0 35px;
   }
 
+
+
   .thumbnail-item {
-    max-width: 260px;
-    margin-right: 20px;
+    margin-bottom: 20px;
   }
 
-  .thumbnail-item+.thumbnail-item {
-    margin-top: 20px;
+  .hidden-detail .thumbnail-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;    
+  }
+
+  .hidden-detail .thumbnail-image {
+    width: 370px;
+    height: 250px;
+  }
+
+  .hidden-detail .thumbnail-item {
+    max-width: 45%;
   }
 }
