@@ -71,14 +71,13 @@ a {
 }
 
 .thumbnail-item:hover {
-  transform: scale(1.2);   
+  transform: scale(1.2);
 }
 
 .thumbnail-list {
   flex: 0 1 auto;
   order: 2;
   display: flex;
-  justify-content: space-between;
   list-style: none;
   padding: 20px 0;
   margin: 0 auto;
@@ -150,7 +149,7 @@ a {
 }
 
 .hidden-detail .thumbnail-item {
-	max-width: none;
+  max-width: none;
 }
 
 .hidden-detail .thumbnail-item:hover {
@@ -164,13 +163,11 @@ a {
   }
 
   .thumbnail-list {
+    max-width: 180px;
     flex-direction: column;
     order: 0;
-    margin-left: 20px;
     padding: 0 35px;
   }
-
-
 
   .thumbnail-item {
     margin-bottom: 20px;
@@ -181,7 +178,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    max-width: 1200px;    
+    max-width: 1200px;
   }
 
   .hidden-detail .thumbnail-image {
